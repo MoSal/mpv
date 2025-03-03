@@ -7674,6 +7674,34 @@ Miscellaneous
     Input file type for ``mf://`` (available: jpeg, png, tga, sgi). By default,
     this is guessed from the file extension.
 
+``--appending-max-retries=<max-retries>``
+    Number of retries to read newly appended data at the end of a file, before
+    assuming it's not being appended to anymore (default: 10).
+
+    .. warning::
+
+        Setting this to a high value could significantly slow-down media
+        loading/seeking.
+
+    .. note::
+
+        Only applicable to ``appending://`` URLs, or files that get detected as
+        being appended to.
+
+``--appending-retry-timeout=<retry-timeout>``
+    Timeout in seconds between attempts to read newly appended data at the end
+    of a file (default: 0.2).
+
+    .. warning::
+
+        Setting this to a high value could significantly slow-down media
+        loading/seeking.
+
+    .. note::
+
+        Only applicable to ``appending://`` URLs, or files that get detected as
+        being appended to.
+
 ``--stream-dump=<destination-filename>``
     Instead of playing a file, read its byte stream and write it to the given
     destination file. The destination is overwritten. Can be useful to test
